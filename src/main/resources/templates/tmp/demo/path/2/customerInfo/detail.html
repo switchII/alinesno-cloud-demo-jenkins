@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc 客户信息表 详情 
+@author 罗小东
+@since 2019-09-15 20:52:37
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">客户名称</label>
+	<div class="col-md-9">
+		<input class="form-control" id="customerName" type="text" name="customerName" th:value="${ bean.customerName}" placeholder="客户名称" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">所在公司</label>
+	<div class="col-md-9">
+		<input class="form-control" id="company" type="text" name="company" th:value="${ bean.company}" placeholder="所在公司" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">客户电话</label>
+	<div class="col-md-9">
+		<input class="form-control" id="phone" type="text" name="phone" th:value="${ bean.phone}" placeholder="客户电话" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">联系人职位</label>
+	<div class="col-md-9">
+		<input class="form-control" id="personPosition" type="text" name="personPosition" th:value="${ bean.personPosition}" placeholder="联系人职位" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">电子邮箱</label>
+	<div class="col-md-9">
+		<input class="form-control" id="email" type="text" name="email" th:value="${ bean.email}" placeholder="电子邮箱" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">customerName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="customerName" type="text" name="customerName" th:value="${ bean.customerName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">personPosition</label>
+	<div class="col-md-9">
+		<input class="form-control" id="personPosition" type="text" name="personPosition" th:value="${ bean.personPosition}" placeholder="" readonly="true">
+	</div>
+</div>
+							
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+
