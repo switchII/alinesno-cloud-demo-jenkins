@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc 客户关系表 详情 
+@author 罗小东
+@since 2019-09-15 20:25:00
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">所属客户</label>
+	<div class="col-md-9">
+		<input class="form-control" id="customerId" type="text" name="customerId" th:value="${ bean.customerId}" placeholder="所属客户" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">客户关系</label>
+	<div class="col-md-9">
+		<input class="form-control" id="customerRelation" type="text" name="customerRelation" th:value="${ bean.customerRelation}" placeholder="客户关系" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">关系人名称</label>
+	<div class="col-md-9">
+		<input class="form-control" id="relationPersonName" type="text" name="relationPersonName" th:value="${ bean.relationPersonName}" placeholder="关系人名称" readonly="true">
+	</div>
+</div>
+							
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+
