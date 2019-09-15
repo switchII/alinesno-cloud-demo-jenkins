@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  详情 
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentCount</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentCount" type="text" name="commentCount" th:value="${ bean.commentCount}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postAuthor</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postAuthor" type="text" name="postAuthor" th:value="${ bean.postAuthor}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postContent</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postContent" type="text" name="postContent" th:value="${ bean.postContent}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postDate</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postDate" type="text" name="postDate" th:value="${ bean.postDate}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postMimeType</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postMimeType" type="text" name="postMimeType" th:value="${ bean.postMimeType}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postModifield</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postModifield" type="text" name="postModifield" th:value="${ bean.postModifield}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postName" type="text" name="postName" th:value="${ bean.postName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postPassword</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postPassword" type="text" name="postPassword" th:value="${ bean.postPassword}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postStatus</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postStatus" type="text" name="postStatus" th:value="${ bean.postStatus}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postTitle</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postTitle" type="text" name="postTitle" th:value="${ bean.postTitle}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">postType</label>
+	<div class="col-md-9">
+		<input class="form-control" id="postType" type="text" name="postType" th:value="${ bean.postType}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">toPing</label>
+	<div class="col-md-9">
+		<input class="form-control" id="toPing" type="text" name="toPing" th:value="${ bean.toPing}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="" readonly="true">
+	</div>
+</div>
+							
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+

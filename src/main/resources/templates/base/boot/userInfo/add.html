@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  添加
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+								
+									<input type="hidden" name="formToken" th:value="${session.formToken}" />
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">accountId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="accountId" type="text" name="accountId" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">avatarHead</label>
+	<div class="col-md-9">
+		<input class="form-control" id="avatarHead" type="text" name="avatarHead" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">birthday</label>
+	<div class="col-md-9">
+		<input class="form-control" id="birthday" type="text" name="birthday" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">classes</label>
+	<div class="col-md-9">
+		<input class="form-control" id="classes" type="text" name="classes" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">collgeName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="collgeName" type="text" name="collgeName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">companyDept</label>
+	<div class="col-md-9">
+		<input class="form-control" id="companyDept" type="text" name="companyDept" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">companyName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="companyName" type="text" name="companyName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">education</label>
+	<div class="col-md-9">
+		<input class="form-control" id="education" type="text" name="education" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">email</label>
+	<div class="col-md-9">
+		<input class="form-control" id="email" type="text" name="email" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">englishName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="englishName" type="text" name="englishName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">facsimile</label>
+	<div class="col-md-9">
+		<input class="form-control" id="facsimile" type="text" name="facsimile" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">groupName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="groupName" type="text" name="groupName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">homeAddress</label>
+	<div class="col-md-9">
+		<input class="form-control" id="homeAddress" type="text" name="homeAddress" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">homeCity</label>
+	<div class="col-md-9">
+		<input class="form-control" id="homeCity" type="text" name="homeCity" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">jobName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="jobName" type="text" name="jobName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">livingAdress</label>
+	<div class="col-md-9">
+		<input class="form-control" id="livingAdress" type="text" name="livingAdress" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">livingCity</label>
+	<div class="col-md-9">
+		<input class="form-control" id="livingCity" type="text" name="livingCity" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">mainConnection</label>
+	<div class="col-md-9">
+		<input class="form-control" id="mainConnection" type="text" name="mainConnection" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">mobile</label>
+	<div class="col-md-9">
+		<input class="form-control" id="mobile" type="text" name="mobile" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">nativeAddress</label>
+	<div class="col-md-9">
+		<input class="form-control" id="nativeAddress" type="text" name="nativeAddress" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">owners</label>
+	<div class="col-md-9">
+		<input class="form-control" id="owners" type="text" name="owners" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">parentFather</label>
+	<div class="col-md-9">
+		<input class="form-control" id="parentFather" type="text" name="parentFather" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">parentMother</label>
+	<div class="col-md-9">
+		<input class="form-control" id="parentMother" type="text" name="parentMother" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">phone</label>
+	<div class="col-md-9">
+		<input class="form-control" id="phone" type="text" name="phone" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">professionalName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="professionalName" type="text" name="professionalName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">qq</label>
+	<div class="col-md-9">
+		<input class="form-control" id="qq" type="text" name="qq" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">reallyName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="reallyName" type="text" name="reallyName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">registIp</label>
+	<div class="col-md-9">
+		<input class="form-control" id="registIp" type="text" name="registIp" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">registSource</label>
+	<div class="col-md-9">
+		<input class="form-control" id="registSource" type="text" name="registSource" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">remark</label>
+	<div class="col-md-9">
+		<input class="form-control" id="remark" type="text" name="remark" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolEndTime</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolEndTime" type="text" name="schoolEndTime" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolId" type="text" name="schoolId" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolName" type="text" name="schoolName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolNum</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolNum" type="text" name="schoolNum" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolStartTime</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolStartTime" type="text" name="schoolStartTime" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">sex</label>
+	<div class="col-md-9">
+		<input class="form-control" id="sex" type="text" name="sex" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">shoolJob</label>
+	<div class="col-md-9">
+		<input class="form-control" id="shoolJob" type="text" name="shoolJob" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userCode" type="text" name="userCode" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userHeight</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userHeight" type="text" name="userHeight" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userName" type="text" name="userName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userStatus</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userStatus" type="text" name="userStatus" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">wechat</label>
+	<div class="col-md-9">
+		<input class="form-control" id="wechat" type="text" name="wechat" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">weibo</label>
+	<div class="col-md-9">
+		<input class="form-control" id="weibo" type="text" name="weibo" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" placeholder="">
+	</div>
+</div>
+							
+								</form>
+							</div>
+
+							<div class="card-footer">
+								<button class="btn btn-primary" style="float:right" onclick="save()" type="button">保存</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script th:src="@{/asserts/vendors/jquery/js/jquery.min.js}"></script>
+	<script th:src="@{/asserts/vendors/jquery.form/jquery.form.min.js}"></script>
+
+	<script th:src="@{/asserts/vendors/layer/layer.js}"></script>
+	<script th:src="@{/asserts/js/global.js}"></script>
+
+	<script type="text/javascript">
+		// 保存操作
+		function save() {
+			console.log('save');
+			$("#addForm").ajaxSubmit({
+				url : ctx+"base/boot/userInfo/save",
+				type : "POST",
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				},
+				success : function(data) {
+					if (data.code == 200) {
+						layer.msg("操作成功!");
+					} else {
+						layer.alert(data.message);
+					}
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
+

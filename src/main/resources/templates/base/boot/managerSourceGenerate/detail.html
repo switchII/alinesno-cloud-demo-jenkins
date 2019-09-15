@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  详情 
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">authorName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="authorName" type="text" name="authorName" th:value="${ bean.authorName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">dbDriver</label>
+	<div class="col-md-9">
+		<input class="form-control" id="dbDriver" type="text" name="dbDriver" th:value="${ bean.dbDriver}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">dbPwd</label>
+	<div class="col-md-9">
+		<input class="form-control" id="dbPwd" type="text" name="dbPwd" th:value="${ bean.dbPwd}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">dbUrl</label>
+	<div class="col-md-9">
+		<input class="form-control" id="dbUrl" type="text" name="dbUrl" th:value="${ bean.dbUrl}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">dbUser</label>
+	<div class="col-md-9">
+		<input class="form-control" id="dbUser" type="text" name="dbUser" th:value="${ bean.dbUser}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">bootPrefix</label>
+	<div class="col-md-9">
+		<input class="form-control" id="bootPrefix" type="text" name="bootPrefix" th:value="${ bean.bootPrefix}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">feignServerPath</label>
+	<div class="col-md-9">
+		<input class="form-control" id="feignServerPath" type="text" name="feignServerPath" th:value="${ bean.feignServerPath}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">packageName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="packageName" type="text" name="packageName" th:value="${ bean.packageName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">applicationName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="applicationName" type="text" name="applicationName" th:value="${ bean.applicationName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">gitPassword</label>
+	<div class="col-md-9">
+		<input class="form-control" id="gitPassword" type="text" name="gitPassword" th:value="${ bean.gitPassword}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">gitRepositoryUrl</label>
+	<div class="col-md-9">
+		<input class="form-control" id="gitRepositoryUrl" type="text" name="gitRepositoryUrl" th:value="${ bean.gitRepositoryUrl}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">gitUserName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="gitUserName" type="text" name="gitUserName" th:value="${ bean.gitUserName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">dockerProject</label>
+	<div class="col-md-9">
+		<input class="form-control" id="dockerProject" type="text" name="dockerProject" th:value="${ bean.dockerProject}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">jenkinsPassword</label>
+	<div class="col-md-9">
+		<input class="form-control" id="jenkinsPassword" type="text" name="jenkinsPassword" th:value="${ bean.jenkinsPassword}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">jenkinsUrl</label>
+	<div class="col-md-9">
+		<input class="form-control" id="jenkinsUrl" type="text" name="jenkinsUrl" th:value="${ bean.jenkinsUrl}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">jenkinsUserName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="jenkinsUserName" type="text" name="jenkinsUserName" th:value="${ bean.jenkinsUserName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">serviceProject</label>
+	<div class="col-md-9">
+		<input class="form-control" id="serviceProject" type="text" name="serviceProject" th:value="${ bean.serviceProject}" placeholder="" readonly="true">
+	</div>
+</div>
+							
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+

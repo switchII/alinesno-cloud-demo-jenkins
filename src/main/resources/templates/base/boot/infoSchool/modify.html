@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  更新
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+								
+									<input type="hidden" name="formToken" th:value="${session.formToken}" />
+									<input type="hidden" name="id" th:value="${bean.id}" />
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">owners</label>
+	<div class="col-md-9">
+		<input class="form-control" id="owners" type="text" name="owners" th:value="${ bean.owners}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolAddress</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolAddress" type="text" name="schoolAddress" th:value="${ bean.schoolAddress}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolCode" type="text" name="schoolCode" th:value="${ bean.schoolCode}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolName" type="text" name="schoolName" th:value="${ bean.schoolName}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolOwner</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolOwner" type="text" name="schoolOwner" th:value="${ bean.schoolOwner}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolOwnerCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolOwnerCode" type="text" name="schoolOwnerCode" th:value="${ bean.schoolOwnerCode}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolProperties</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolProperties" type="text" name="schoolProperties" th:value="${ bean.schoolProperties}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolPropertiesCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolPropertiesCode" type="text" name="schoolPropertiesCode" th:value="${ bean.schoolPropertiesCode}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolProvince</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolProvince" type="text" name="schoolProvince" th:value="${ bean.schoolProvince}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolProvinceCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolProvinceCode" type="text" name="schoolProvinceCode" th:value="${ bean.schoolProvinceCode}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolType</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolType" type="text" name="schoolType" th:value="${ bean.schoolType}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolTypeName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolTypeName" type="text" name="schoolTypeName" th:value="${ bean.schoolTypeName}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="">
+	</div>
+</div>
+							
+								</form>
+							</div>
+
+							<div class="card-footer">
+								<button class="btn btn-primary" style="float:right" onclick="update()" type="button">更新</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script th:src="@{/asserts/vendors/jquery/js/jquery.min.js}"></script>
+	<script th:src="@{/asserts/vendors/jquery.form/jquery.form.min.js}"></script>
+
+	<script th:src="@{/asserts/vendors/layer/layer.js}"></script>
+	<script th:src="@{/asserts/js/global.js}"></script>
+
+	<script type="text/javascript">
+		// 保存操作
+		function update() {
+			console.log('update');
+			$("#addForm").ajaxSubmit({
+				url : ctx+"base/boot/infoSchool/update",
+				type : "POST",
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				},
+				success : function(data) {
+					if (data.code == 200) {
+						layer.msg("操作成功!");
+					} else {
+						layer.alert(data.message);
+					}
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
+

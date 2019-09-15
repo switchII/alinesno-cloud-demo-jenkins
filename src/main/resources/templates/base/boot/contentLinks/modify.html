@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  更新
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+								
+									<input type="hidden" name="formToken" th:value="${session.formToken}" />
+									<input type="hidden" name="id" th:value="${bean.id}" />
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkDescription</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkDescription" type="text" name="linkDescription" th:value="${ bean.linkDescription}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkImage</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkImage" type="text" name="linkImage" th:value="${ bean.linkImage}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkName" type="text" name="linkName" th:value="${ bean.linkName}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkNotes</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkNotes" type="text" name="linkNotes" th:value="${ bean.linkNotes}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkOwner</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkOwner" type="text" name="linkOwner" th:value="${ bean.linkOwner}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkRating</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkRating" type="text" name="linkRating" th:value="${ bean.linkRating}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkTarget</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkTarget" type="text" name="linkTarget" th:value="${ bean.linkTarget}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkUpdated</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkUpdated" type="text" name="linkUpdated" th:value="${ bean.linkUpdated}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkUrl</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkUrl" type="text" name="linkUrl" th:value="${ bean.linkUrl}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkVisible</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkVisible" type="text" name="linkVisible" th:value="${ bean.linkVisible}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="">
+	</div>
+</div>
+							
+								</form>
+							</div>
+
+							<div class="card-footer">
+								<button class="btn btn-primary" style="float:right" onclick="update()" type="button">更新</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script th:src="@{/asserts/vendors/jquery/js/jquery.min.js}"></script>
+	<script th:src="@{/asserts/vendors/jquery.form/jquery.form.min.js}"></script>
+
+	<script th:src="@{/asserts/vendors/layer/layer.js}"></script>
+	<script th:src="@{/asserts/js/global.js}"></script>
+
+	<script type="text/javascript">
+		// 保存操作
+		function update() {
+			console.log('update');
+			$("#addForm").ajaxSubmit({
+				url : ctx+"base/boot/contentLinks/update",
+				type : "POST",
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				},
+				success : function(data) {
+					if (data.code == 200) {
+						layer.msg("操作成功!");
+					} else {
+						layer.alert(data.message);
+					}
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
+

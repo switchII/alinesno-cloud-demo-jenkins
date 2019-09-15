@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  详情 
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">owners</label>
+	<div class="col-md-9">
+		<input class="form-control" id="owners" type="text" name="owners" th:value="${ bean.owners}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolAddress</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolAddress" type="text" name="schoolAddress" th:value="${ bean.schoolAddress}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolCode" type="text" name="schoolCode" th:value="${ bean.schoolCode}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolName" type="text" name="schoolName" th:value="${ bean.schoolName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolOwner</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolOwner" type="text" name="schoolOwner" th:value="${ bean.schoolOwner}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolOwnerCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolOwnerCode" type="text" name="schoolOwnerCode" th:value="${ bean.schoolOwnerCode}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolProperties</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolProperties" type="text" name="schoolProperties" th:value="${ bean.schoolProperties}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolPropertiesCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolPropertiesCode" type="text" name="schoolPropertiesCode" th:value="${ bean.schoolPropertiesCode}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolProvince</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolProvince" type="text" name="schoolProvince" th:value="${ bean.schoolProvince}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolProvinceCode</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolProvinceCode" type="text" name="schoolProvinceCode" th:value="${ bean.schoolProvinceCode}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolType</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolType" type="text" name="schoolType" th:value="${ bean.schoolType}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">schoolTypeName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="schoolTypeName" type="text" name="schoolTypeName" th:value="${ bean.schoolTypeName}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="" readonly="true">
+	</div>
+</div>
+							
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+

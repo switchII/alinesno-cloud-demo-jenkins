@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  添加
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+								
+									<input type="hidden" name="formToken" th:value="${session.formToken}" />
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkDescription</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkDescription" type="text" name="linkDescription" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkImage</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkImage" type="text" name="linkImage" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkName" type="text" name="linkName" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkNotes</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkNotes" type="text" name="linkNotes" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkOwner</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkOwner" type="text" name="linkOwner" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkRating</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkRating" type="text" name="linkRating" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkTarget</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkTarget" type="text" name="linkTarget" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkUpdated</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkUpdated" type="text" name="linkUpdated" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkUrl</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkUrl" type="text" name="linkUrl" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">linkVisible</label>
+	<div class="col-md-9">
+		<input class="form-control" id="linkVisible" type="text" name="linkVisible" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" placeholder="">
+	</div>
+</div>
+							
+								</form>
+							</div>
+
+							<div class="card-footer">
+								<button class="btn btn-primary" style="float:right" onclick="save()" type="button">保存</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script th:src="@{/asserts/vendors/jquery/js/jquery.min.js}"></script>
+	<script th:src="@{/asserts/vendors/jquery.form/jquery.form.min.js}"></script>
+
+	<script th:src="@{/asserts/vendors/layer/layer.js}"></script>
+	<script th:src="@{/asserts/js/global.js}"></script>
+
+	<script type="text/javascript">
+		// 保存操作
+		function save() {
+			console.log('save');
+			$("#addForm").ajaxSubmit({
+				url : ctx+"base/boot/contentLinks/save",
+				type : "POST",
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				},
+				success : function(data) {
+					if (data.code == 200) {
+						layer.msg("操作成功!");
+					} else {
+						layer.alert(data.message);
+					}
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
+

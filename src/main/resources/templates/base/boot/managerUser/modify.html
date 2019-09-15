@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  更新
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+								
+									<input type="hidden" name="formToken" th:value="${session.formToken}" />
+									<input type="hidden" name="id" th:value="${bean.id}" />
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userAccount</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userAccount" type="text" name="userAccount" th:value="${ bean.userAccount}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userAddtime</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userAddtime" type="text" name="userAddtime" th:value="${ bean.userAddtime}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userPassword</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userPassword" type="text" name="userPassword" th:value="${ bean.userPassword}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userRole</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userRole" type="text" name="userRole" th:value="${ bean.userRole}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userSalt</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userSalt" type="text" name="userSalt" th:value="${ bean.userSalt}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userStatus</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userStatus" type="text" name="userStatus" th:value="${ bean.userStatus}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userTitle</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userTitle" type="text" name="userTitle" th:value="${ bean.userTitle}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userType</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userType" type="text" name="userType" th:value="${ bean.userType}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userName</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userName" type="text" name="userName" th:value="${ bean.userName}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="">
+	</div>
+</div>
+							
+								</form>
+							</div>
+
+							<div class="card-footer">
+								<button class="btn btn-primary" style="float:right" onclick="update()" type="button">更新</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script th:src="@{/asserts/vendors/jquery/js/jquery.min.js}"></script>
+	<script th:src="@{/asserts/vendors/jquery.form/jquery.form.min.js}"></script>
+
+	<script th:src="@{/asserts/vendors/layer/layer.js}"></script>
+	<script th:src="@{/asserts/js/global.js}"></script>
+
+	<script type="text/javascript">
+		// 保存操作
+		function update() {
+			console.log('update');
+			$("#addForm").ajaxSubmit({
+				url : ctx+"base/boot/managerUser/update",
+				type : "POST",
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				},
+				success : function(data) {
+					if (data.code == 200) {
+						layer.msg("操作成功!");
+					} else {
+						layer.alert(data.message);
+					}
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
+

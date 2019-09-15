@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc 区域表 详情 
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">父ID</label>
+	<div class="col-md-9">
+		<input class="form-control" id="parentId" type="text" name="parentId" th:value="${ bean.parentId}" placeholder="父ID" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">区域名称</label>
+	<div class="col-md-9">
+		<input class="form-control" id="districtName" type="text" name="districtName" th:value="${ bean.districtName}" placeholder="区域名称" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">简称</label>
+	<div class="col-md-9">
+		<input class="form-control" id="shortName" type="text" name="shortName" th:value="${ bean.shortName}" placeholder="简称" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">经度</label>
+	<div class="col-md-9">
+		<input class="form-control" id="longitude" type="text" name="longitude" th:value="${ bean.longitude}" placeholder="经度" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">维度</label>
+	<div class="col-md-9">
+		<input class="form-control" id="latitude" type="text" name="latitude" th:value="${ bean.latitude}" placeholder="维度" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">等级</label>
+	<div class="col-md-9">
+		<input class="form-control" id="level" type="text" name="level" th:value="${ bean.level}" placeholder="等级" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">排序</label>
+	<div class="col-md-9">
+		<input class="form-control" id="sort" type="text" name="sort" th:value="${ bean.sort}" placeholder="排序" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">删除标志: 0未删除，1已删除</label>
+	<div class="col-md-9">
+		<input class="form-control" id="isDeleted" type="text" name="isDeleted" th:value="${ bean.isDeleted}" placeholder="删除标志: 0未删除，1已删除" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">创建时间</label>
+	<div class="col-md-9">
+		<input class="form-control" id="createTime" type="text" name="createTime" th:value="${ bean.createTime}" placeholder="创建时间" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="" readonly="true">
+	</div>
+</div>
+							
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+

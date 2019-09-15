@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: alinesno-cloud-base-boot
+  datasource:
+    url: jdbc:mysql://localhost:3306/alinesno_cloud_base_boot?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: admin
+  devtools:
+    restart:
+      enabled: false 
+   
+server:
+  port: 24001 

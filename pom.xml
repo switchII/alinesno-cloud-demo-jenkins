@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<!--
+	 @author ${author} 
+ 	 @sine 2019-09-15 14:09:306
+	-->	
+	
+	<groupId>com.alinesno.cloud.base.boot</groupId>
+	<artifactId>alinesno-cloud-base-boot</artifactId>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>com.alinesno.cloud.common.parent</groupId>
+		<artifactId>alinesno-cloud-common-parent</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
+		<relativePath></relativePath>
+	</parent>
+
+	<dependencies>
+		
+		<!-- alinesno cloud core start -->
+	    <dependency>
+	        <groupId>com.alinesno.cloud.common.web</groupId>
+	        <artifactId>alinesno-cloud-common-web</artifactId>
+	        <version>2.0.0-SNAPSHOT</version>
+	    </dependency>
+		<!-- alinesno cloud core end -->
+
+		<!-- eurake start -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<!-- eurake end -->
+
+		<!-- dev tools start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- dev tools end -->
+
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+
+			<!-- sprigboot 打包组件 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+
+<!--
+@desc  详情 
+@author LuoAnDong
+@since 2019-09-15 14:04:42
+-->
+	<div layout:fragment="content">
+		<div class="container-fluid content-main">
+			<div class="animated fadeIn">
+				<div class="row">
+					<!-- /.col-->
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+
+								<form class="form-horizontal" id="addForm" style="float:left;width:100%">
+
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentAuthor</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentAuthor" type="text" name="commentAuthor" th:value="${ bean.commentAuthor}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentAuthorEmail</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentAuthorEmail" type="text" name="commentAuthorEmail" th:value="${ bean.commentAuthorEmail}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentAuthorIp</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentAuthorIp" type="text" name="commentAuthorIp" th:value="${ bean.commentAuthorIp}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentAuthorUrl</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentAuthorUrl" type="text" name="commentAuthorUrl" th:value="${ bean.commentAuthorUrl}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentContent</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentContent" type="text" name="commentContent" th:value="${ bean.commentContent}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentDate</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentDate" type="text" name="commentDate" th:value="${ bean.commentDate}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentDateGmt</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentDateGmt" type="text" name="commentDateGmt" th:value="${ bean.commentDateGmt}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">commentPostId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="commentPostId" type="text" name="commentPostId" th:value="${ bean.commentPostId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">userId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="userId" type="text" name="userId" th:value="${ bean.userId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">departmentId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="departmentId" type="text" name="departmentId" th:value="${ bean.departmentId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">fieldId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="fieldId" type="text" name="fieldId" th:value="${ bean.fieldId}" placeholder="" readonly="true">
+	</div>
+</div>
+<div class="form-group row margin-right-0">
+	<label class="col-md-3 col-form-label" for="text-input">operatorId</label>
+	<div class="col-md-9">
+		<input class="form-control" id="operatorId" type="text" name="operatorId" th:value="${ bean.operatorId}" placeholder="" readonly="true">
+	</div>
+</div>
+							
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+

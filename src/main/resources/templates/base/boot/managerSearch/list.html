@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head th:replace="dashboard/header :: header"></head>
+<body>
+	<!--
+	@desc  管理
+	@author LuoAnDong
+	@since 2019-09-15 14:04:42
+	-->
+	<div layout:fragment="content">
+			
+		<!-- nav_start -->
+		<ol class="breadcrumb">
+		  <li class="breadcrumb-item">基础平台</li>
+		  <li class="breadcrumb-item">监管按理</li>
+		  <li class="breadcrumb-item active">系统预警</li>
+		</ol>
+		<!-- nav_end -->
+			
+		<div class="container-fluid">
+		  <div class="animated fadeIn">
+			<div class="row">
+			  <div class="col-lg-12">
+			  
+				 <div class="card">
+				  <div class="card-body">
+					<form class="form-inline" id="AlinesnoSearchForm" action="" method="post">
+					  <div class="form-group">
+						<label for="exampleInputName2">应用名称</label>
+						<input class="form-control" name="condition[applicationName|like]" id="exampleInputName2" type="text" placeholder="应用名称">
+					  </div>
+					  <div class="form-group">
+						<label for="exampleInputEmail2">状态</label>
+						<input class="form-control" name="condition[hasStatus]"  id="exampleInputEmail2" type="text" placeholder="状态">
+					  </div>
+					  <button  type="button" onclick="search(this)"  class="btn btn-primary">搜索</button>
+					</form>
+				  </div>
+				</div> 
+			  
+				<div class="card">
+				  <div class="card-body">
+					   <table id="datatables" class="display" style="width: 100%">
+							<thead>
+								<tr>
+						<th>defaultValue</th>
+										<th>hasDate</th>
+										<th>label</th>
+										<th>name</th>
+										<th>optionJson</th>
+										<th>resourceId</th>
+										<th>searchType</th>
+										<th>departmentId</th>
+										<th>fieldId</th>
+										<th>operatorId</th>
+						</tr>
+							</thead>
+							<tbody>
+									
+							</tbody>
+							<tfoot>
+								<tr>
+						<th>defaultValue</th>
+										<th>hasDate</th>
+										<th>label</th>
+										<th>name</th>
+										<th>optionJson</th>
+										<th>resourceId</th>
+										<th>searchType</th>
+										<th>departmentId</th>
+										<th>fieldId</th>
+										<th>operatorId</th>
+						</tr>
+							</tfoot>
+					  </table> 
+				  </div>
+				</div>
+				
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+	<script th:src="@{/asserts/vendors/jquery/js/jquery.min.js}"></script>
+	<script th:src="@{/asserts/vendors/datatables/datatables.js}"></script>
+	<script th:src="@{/asserts/vendors/layer/layer.js}"></script>
+	<script th:src="@{/asserts/js/global.js}"></script>
+	
+	<script type="text/javascript">
+	
+		// 字段数组
+		var fieldArr = [ {'data': 'defaultValue'},
+			 {'data': 'hasDate'},
+			 {'data': 'label'},
+			 {'data': 'name'},
+			 {'data': 'optionJson'},
+			 {'data': 'resourceId'},
+			 {'data': 'searchType'},
+			 {'data': 'departmentId'},
+			 {'data': 'fieldId'},
+			 {'data': 'operatorId'},
+			  ];	
+			
+		// 数组集合	
+		var _datatableId = "datatables" ; 
+		var dataTable = null ; 
+		var datataleUrl = ctx + "base/boot/managerSearch/datatables" ; 	
+	
+		// 操作栏
+		var toolbar = [
+			{"fMethod":"deleteMultipleItem()" , "fName":"删除"} ,
+			{"fMethod":"modifyItem()" , "fName":"修改"} ,
+			{"fMethod":"addItem()" , "fName":"添加"} ,
+			{"fMethod":"showItem()" , "fName":"详情"} ,
+		] ; 
+		
+		$(function(){
+			// 初始化表单
+			dataTable = initDatatable(_datatableId ,  datataleUrl , fieldArr , toolbar , null) ; 	
+		}) ; 	
+		
+		////////////////////////////////////////////////////curd start ///////////////////////////////////////////
+		function addItem() {
+			var _url = ctx + "base/boot/managerSearch/add" ; 
+			
+			layer.open({
+				type : 2,
+				title : '添加',
+				shadeClose : true,
+				shade : 0.8,
+				maxmin : true, //开启最大化最小化按钮
+				area : [ '893px', '85%' ],
+				content : _url,
+				end : function() {
+					search(dataTable);
+				}
+			});
+		}
+
+		//删除多元素
+		function deleteMultipleItem() {
+			var _url = ctx + "base/boot/managerSearch/delete" ; 
+			
+			var selectRows = $('#' + _datatableId).DataTable().rows('.selected').data();
+			if (selectRows.length == 0) {
+				layer.alert("编辑请选择元素.")
+				return;
+			}
+			var rowsId = new Array();
+			for (var i = 0; i < selectRows.length; i++) {
+				rowsId.push(selectRows[i].id);
+			}
+
+			var confirmWindow = layer.confirm('请确认是否删除？', {btn : [ '删除', '取消' ]}, function() {
+				$.get(_url, {
+					rowsId : rowsId
+				}, function(response) {
+					console.log('response = ' + response);
+					layer.close(confirmWindow);
+					if (response.code == 200) {
+						search(dataTable);
+					} else {
+						layer.alert(response.message);
+					}
+				})
+			});
+		}
+
+
+		//修改单个元素
+		function modifyItem() {
+			var _url = ctx + "base/boot/managerSearch/modify" ; 
+			
+			var selectRows = $('#' + _datatableId).DataTable().rows('.selected').data();
+			if (selectRows.length == 0) {
+				layer.alert("编辑请选择元素.")
+				return;
+			}
+			if (selectRows.length > 1) {
+				layer.alert("编辑请选择一条元素.")
+				return;
+			}
+			var row = selectRows[0];
+			layer.open({
+				type : 2,
+				title : '修改',
+				shadeClose : true,
+				shade : 0.8,
+				maxmin : true,
+				area : [ '893px', '85%' ],
+				content : _url + '?id=' + row.id,
+				end : function() {
+					search(dataTable);
+				}
+			});
+		}
+		
+		//查看单个元素
+		function showItem() {
+			var _url = ctx + "base/boot/managerSearch/detail" ; 
+			
+			var selectRows = $('#' + _datatableId).DataTable().rows('.selected').data();
+			if (selectRows.length == 0) {
+				layer.alert("编辑请选择元素.")
+				return;
+			}
+			var row = selectRows[0];
+			layer.open({
+				type : 2,
+				title : '修改',
+				shadeClose : true,
+				shade : 0.8,
+				maxmin : true,
+				area : [ '893px', '85%' ],
+				content : _url + '?id=' + row.id
+			});
+		}
+
+		////////////////////////////////////////////////////curd end ///////////////////////////////////////////
+		
+	</script>
+
+</body>
+</html>
